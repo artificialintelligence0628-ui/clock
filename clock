@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <ctime>
+#include <windows.h> // Sleep() lives here
+
+using namespace std;
+
+int main() {
+while (true) {
+system("cls");
+
+time_t now = time(0);
+tm *ltm = localtime(&now);
+
+cout << "Current Time: "
+<< (ltm->tm_hour < 10 ? "0" : "") << ltm->tm_hour << ":"
+<< (ltm->tm_min < 10 ? "0" : "") << ltm->tm_min << ":"
+<< (ltm->tm_sec < 10 ? "0" : "") << ltm->tm_sec << endl;
+
+
+Sleep(1000);
+    }
+return 0;
+}
